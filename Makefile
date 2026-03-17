@@ -1,4 +1,4 @@
-.PHONY: install lint type test all
+.PHONY: install lint type test all update-charter
 
 install:
 	poetry install
@@ -13,3 +13,6 @@ test:
 	poetry run pytest
 
 all: lint type test
+
+update-charter:
+	git subtree pull --prefix=docs/dev-charter dev-charter main --squash

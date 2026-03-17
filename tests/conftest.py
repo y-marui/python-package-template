@@ -1,6 +1,3 @@
-import pytest
-
-
 # --- fixture examples ---
 # 共通fixtureはここに定義する
 # 例:
