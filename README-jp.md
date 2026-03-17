@@ -3,7 +3,7 @@
 > **このファイルは正本（日本語版）です。**
 > 英語版（参照）は [README.md](README.md) を参照してください。
 
-[![CI](https://github.com/[user]/[repo]/actions/workflows/ci.yml/badge.svg)](https://github.com/[user]/[repo]/actions/workflows/ci.yml)
+[![CI](https://github.com/y-marui/python-package-template/actions/workflows/ci.yml/badge.svg)](https://github.com/y-marui/python-package-template/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 AI支援開発向けの Python パッケージ/アプリケーションテンプレート。
