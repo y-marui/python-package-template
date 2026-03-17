@@ -1,3 +1,6 @@
+<!-- このファイルは AI_CONTEXT.md の内容を Copilot 用にミラーしています。 -->
+<!-- AI_CONTEXT.md を更新した場合はこのファイルも同一コミットで更新してください。 -->
+
 # AI_CONTEXT.md
 
 > このファイルは Claude Code・GitHub Copilot など AI ツールが唯一参照するコンテキストファイルです。
@@ -108,12 +111,6 @@ API → Service → Repository
 ---
 
 ## プロジェクト固有ルール
-
-### マネタイズ方針
-
-- 独自の課金システムは**原則禁止**（メンテナンスコスト・セキュリティリスクのため）
-- OSS の場合: **Buy Me a Coffee + GitHub Sponsors** を使用する
-- マネタイズを本格検討する場合は `MONETIZATION.md` をリポジトリに作成し、この `AI_CONTEXT.md` に概要を追記する
 
 ### 言語ポリシー
 
