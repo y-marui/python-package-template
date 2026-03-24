@@ -7,7 +7,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 A Python package/application template for AI-assisted development.
-Built on Poetry + Claude Code + GitHub Copilot.
+Built on uv + Claude Code + GitHub Copilot.
 
 | Field | Value |
 |---|---|
@@ -19,7 +19,7 @@ Built on Poetry + Claude Code + GitHub Copilot.
 
 ## Features
 
-✅ Dependency management with Poetry
+✅ Dependency management with uv
 ✅ Linting and formatting with ruff (line-length=88)
 ✅ Type checking with mypy (strict mode)
 ✅ Testing with pytest (unit / integration split)
@@ -50,7 +50,7 @@ make all
 
 | Command | Description |
 |---|---|
-| `make install` | `poetry install` |
+| `make install` | `uv sync` |
 | `make lint` | `ruff check .` |
 | `make type` | `mypy src` |
 | `make test` | `pytest` |
@@ -77,7 +77,7 @@ make all
 │   └── guardrails.md      # Development guardrails
 ├── examples/              # Implementation pattern samples
 ├── AI_CONTEXT.md          # AI tool context
-├── pyproject.toml         # Poetry configuration
+├── pyproject.toml         # Project configuration
 └── Makefile               # Development commands
 ```
 

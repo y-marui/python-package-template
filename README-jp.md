@@ -7,7 +7,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 AI支援開発向けの Python パッケージ/アプリケーションテンプレート。
-Poetry + Claude Code + GitHub Copilot 前提の OSS テンプレート。
+uv + Claude Code + GitHub Copilot 前提の OSS テンプレート。
 
 | 項目 | 内容 |
 |---|---|
@@ -19,7 +19,7 @@ Poetry + Claude Code + GitHub Copilot 前提の OSS テンプレート。
 
 ## 特徴
 
-✅ Poetry による依存管理
+✅ uv による依存管理
 ✅ ruff による linting / formatting（line-length=88）
 ✅ mypy による型チェック（strict モード）
 ✅ pytest によるテスト（unit / integration 分離）
@@ -50,7 +50,7 @@ make all
 
 | コマンド | 内容 |
 |---|---|
-| `make install` | `poetry install`（依存関係インストール） |
+| `make install` | `uv sync`（依存関係インストール） |
 | `make lint` | `ruff check .`（linting） |
 | `make type` | `mypy src`（型チェック） |
 | `make test` | `pytest`（テスト実行） |
@@ -77,7 +77,7 @@ make all
 │   └── guardrails.md      # 開発制約
 ├── examples/              # 実装パターンサンプル
 ├── AI_CONTEXT.md          # AI ツール向けコンテキスト
-├── pyproject.toml         # Poetry 設定
+├── pyproject.toml         # プロジェクト設定
 └── Makefile               # 開発コマンド
 ```
 

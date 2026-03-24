@@ -1,16 +1,16 @@
 .PHONY: install lint type test all setup-charter update-charter
 
 install:
-	poetry install
+	uv sync
 
 lint:
-	poetry run ruff check .
+	uv run ruff check .
 
 type:
-	poetry run mypy src
+	uv run mypy src
 
 test:
-	poetry run pytest
+	uv run pytest
 
 all: lint type test
 

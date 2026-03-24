@@ -11,14 +11,14 @@
 ## プロジェクト概要
 
 **目的:** AI支援開発用の Python パッケージ/アプリケーションテンプレート。
-Poetry + Claude Code + GitHub Copilot 前提の OSS テンプレート。
+uv + Claude Code + GitHub Copilot 前提の OSS テンプレート。
 
 **技術スタック:**
 
 | 項目 | バージョン |
 |------|-----------|
 | Python | ^3.11 |
-| Poetry | 最新安定版 |
+| uv | 最新安定版 |
 | pytest | ^8 |
 | ruff | ^0.3（linter / formatter, line-length=88） |
 | mypy | ^1.8（strict モード） |
@@ -135,7 +135,7 @@ API → Service → Repository
 ### CI / ローカル開発コマンド
 
 ```sh
-make install        # poetry install
+make install        # uv sync
 make lint           # ruff check .
 make type           # mypy src
 make test           # pytest
