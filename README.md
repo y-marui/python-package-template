@@ -6,16 +6,16 @@
 [![CI](https://github.com/y-marui/python-package-template/actions/workflows/ci.yml/badge.svg)](https://github.com/y-marui/python-package-template/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-A Python package/application template for AI-assisted development.
-Built on uv + Claude Code + GitHub Copilot.
-
 | Field | Value |
 |---|---|
 | Target | Python package / application |
 | Team | Solo to small team (1–3 people) |
 | Language | English |
-| AI Tools | Claude Code / GitHub Copilot |
+| AI Tools | Claude Code / GitHub Copilot / Gemini CLI |
 | Runtime | Python ^3.11 |
+
+A Python package/application template for AI-assisted development.
+Built on uv + Claude Code + GitHub Copilot.
 
 ## Features
 
@@ -98,6 +98,7 @@ AI context is pre-configured in `AI_CONTEXT.md`.
 |---|---|
 | Claude Code | Setup, large-scale changes, architecture design |
 | GitHub Copilot | Bug fixes, small implementations, test writing |
+| Gemini CLI | Documentation management, translation assistance |
 
 ## Customization
 
@@ -111,3 +112,6 @@ AI context is pre-configured in `AI_CONTEXT.md`.
 ## License
 
 MIT License — see [LICENSE](LICENSE)
+
+---
+*This document has a Japanese canonical version [README-jp.md](README-jp.md). Update both in the same commit when editing.*

@@ -6,18 +6,18 @@
 [![CI](https://github.com/y-marui/python-package-template/actions/workflows/ci.yml/badge.svg)](https://github.com/y-marui/python-package-template/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-AI支援開発向けの Python パッケージ/アプリケーションテンプレート。
-uv + Claude Code + GitHub Copilot 前提の OSS テンプレート。
-
 | 項目 | 内容 |
 |---|---|
 | 開発対象 | Python パッケージ / アプリケーション |
 | 開発環境 | 個人〜小規模チーム（1〜3人） |
 | 主言語 | 英語 |
-| AI ツール | Claude Code / GitHub Copilot |
+| AI ツール | Claude Code / GitHub Copilot / Gemini CLI |
 | 動作環境 | Python ^3.11 |
 
-## 特徴
+AI支援開発向けの Python パッケージ/アプリケーションテンプレート。
+uv + Claude Code + GitHub Copilot 前提の OSS テンプレート。
+
+## Features
 
 ✅ uv による依存管理
 ✅ ruff による linting / formatting（line-length=88）
@@ -27,7 +27,7 @@ uv + Claude Code + GitHub Copilot 前提の OSS テンプレート。
 ✅ Claude Code + GitHub Copilot 向け AI コンテキスト設定済み
 ✅ pre-commit セキュリティフック設定済み
 
-## クイックスタート
+## Quick Start
 
 ```sh
 # 1. テンプレートからリポジトリを作成
@@ -46,7 +46,7 @@ make install
 make all
 ```
 
-## コマンド一覧
+## Commands
 
 | コマンド | 内容 |
 |---|---|
@@ -57,7 +57,7 @@ make all
 | `make all` | lint + type + test |
 | `make update-charter` | dev-charter を最新化（git subtree pull） |
 
-## プロジェクト構造
+## Project Structure
 
 ```
 .
@@ -81,7 +81,7 @@ make all
 └── Makefile               # 開発コマンド
 ```
 
-## ドキュメント索引
+## Documentation
 
 | ドキュメント | 内容 |
 |---|---|
@@ -90,7 +90,7 @@ make all
 | [docs/guardrails.md](docs/guardrails.md) | 開発制約・ガードレール |
 | [AI_CONTEXT.md](AI_CONTEXT.md) | AI ツール向けコンテキスト |
 
-## AI 支援開発
+## AI-Assisted Development
 
 `AI_CONTEXT.md` に AI ツール向けコンテキストが設定済みです。
 
@@ -98,8 +98,9 @@ make all
 |---|---|
 | Claude Code | 立ち上げ・大規模変更・アーキテクチャ設計 |
 | GitHub Copilot | バグ修正・細かな実装・テスト作成 |
+| Gemini CLI | ドキュメント管理・翻訳補助 |
 
-## カスタマイズ手順
+## Customization
 
 1. `src/project_name/` → `src/your_package_name/` にリネーム
 2. `pyproject.toml` の `name` フィールドを更新
@@ -108,6 +109,9 @@ make all
 5. バッジ URL の `[user]` と `[repo]` を置換
 6. `make all` で動作確認
 
-## ライセンス
+## License
 
 MIT License — [LICENSE](LICENSE) を参照
+
+---
+*この文書には英語版 [README.md](README.md) があります。編集時は同一コミットで更新してください。*

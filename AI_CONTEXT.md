@@ -5,7 +5,7 @@
 
 ---
 
-## プロジェクト概要
+## Project Overview
 
 **目的:** AI支援開発用の Python パッケージ/アプリケーションテンプレート。
 uv + Claude Code + GitHub Copilot 前提の OSS テンプレート。
@@ -56,9 +56,9 @@ API → Service → Repository
 
 ---
 
-## 適用する憲章原則
+## Applied Charter Principles
 
-### コーディング前の確認
+### Pre-Coding Checklist
 
 不明・未定の項目があれば**作業前に1回でまとめて**質問する。推測で進めない。
 
@@ -72,7 +72,7 @@ API → Service → Repository
 **確認不要（既存コードに合わせて進める）:**
 - コードスタイル / ファイル配置 / 軽微な実装詳細
 
-### 開発哲学・アーキテクチャ方針
+### Development Philosophy
 
 - まず小さなツールを構築する（段階的に拡張する）
 - ローカルファーストのデザインを優先する（外部サービス依存を避ける）
@@ -80,7 +80,7 @@ API → Service → Repository
 - **最小限の依存関係**: 新規依存追加前に既存の依存で解決できないか必ず検討する
 - オフライン機能を優先する（外部サービスなしで動作することを基本とする）
 
-### コード設計原則
+### Code Design Principles
 
 - **変更範囲は必要最小限**（Over-engineering しない）
 - **YAGNI**: 今必要ない機能は実装しない
@@ -89,27 +89,27 @@ API → Service → Repository
 - **TODO/FIXME を残さない**: 実装するか、issue として記録する
 - **既存コードのパターンに従う**: 命名規則・アーキテクチャ・ディレクトリ構造
 
-### コーディングルール
+### Coding Rules
 
 - 可読性優先
 - 関数は **50行以内**
 - 単一責務
 - コメントは「なぜそうするか」のみ。コードから自明な処理には書かない
 
-### Git 運用
+### Git Workflow
 
 - **Conventional Commits** 形式（`feat` / `fix` / `refactor` / `docs` / `chore`）
 - **WIP 禁止**: 動作しないコードはコミットしない
 - コミット粒度: 機能単位・動作確認 OK 後
 
-### 作業スタンス
+### Work Stance
 
 - **スコープ厳守**: 会話の主題・タスク・ゴールを AI が勝手に変更しない。話題変更はユーザーが明示するか、AI の提案をユーザーが許可した場合のみ
 - **不明点の扱い**: 重要な情報不足や曖昧さは質問する。軽微な不足は合理的な仮定で補い、仮定を明示する。推測で断定しない
 - 大きな変更前に方針を説明してから着手する
 - 不要な依存追加禁止: 既存の依存で解決できないか先に検討する
 
-### エラー・デバッグ対応
+### Error & Debug Handling
 
 - エラー発生時は **原因分析 → 修正方針説明 → 実装** の順で進める
 - エラーログ・スタックトレースは必ず**全文確認**してから対応（推測で修正しない）
@@ -117,15 +117,15 @@ API → Service → Repository
 
 ---
 
-## プロジェクト固有ルール
+## Project-Specific Rules
 
-### マネタイズ方針
+### Monetization Policy
 
 - 独自の課金システムは**原則禁止**（メンテナンスコスト・セキュリティリスクのため）
 - OSS の場合: **Buy Me a Coffee + GitHub Sponsors** を使用する
 - マネタイズを本格検討する場合は `MONETIZATION.md` をリポジトリに作成し、この `AI_CONTEXT.md` に概要を追記する
 
-### 言語ポリシー
+### Language Policy
 
 このプロジェクトは **OSS** のため、ドキュメント・コード・コメントは**英語**を基本とする。
 
@@ -138,14 +138,14 @@ API → Service → Repository
 
 日英両方のドキュメントが存在する場合は**日本語版を正本**として編集し、英語版をそれに合わせて更新する（英語版を独立して編集しない）。
 
-### docs/ と ai/context/ の役割分担
+### docs/ and ai/context/ Roles
 
 | ディレクトリ | 役割 | AI の編集 |
 |---|---|---|
 | `docs/` | 人間が書き・読む詳細仕様書 | **禁止**（参照のみ） |
 | `ai/context/` | AI向け制約要約。`docs/` と競合する場合は **こちらを優先** | 更新可 |
 
-### CI / ローカル開発コマンド
+### CI / Local Development Commands
 
 ```sh
 make install        # uv sync
@@ -158,7 +158,7 @@ make update-charter # git subtree pull で dev-charter を最新化
 
 CI（GitHub Actions）は push / PR のたびに `ruff check` → `mypy src` → `pytest` を実行。
 
-### pre-commit フック（`.pre-commit-config.yaml`）
+### Pre-commit Hooks (.pre-commit-config.yaml)
 
 セキュリティ・品質チェックが自動で走る。以下が有効:
 
@@ -195,7 +195,7 @@ pre-commit run --all-files  # 動作確認（必須）
 
 ---
 
-## AI ツール分担
+## AI Tool Assignments
 
 | ツール | 担当範囲 |
 |---|---|
@@ -204,19 +204,18 @@ pre-commit run --all-files  # 動作確認（必須）
 | **Gemini CLI** | プライバシーポリシー作成・更新、ストア説明文、審査用ドキュメント、プロジェクト全体のドキュメント管理 |
 
 **AI_CONTEXT.md の同期ルール:**
-- `AI_CONTEXT.md` を更新したときは `.github/copilot-instructions.md` も**同一コミットで同期**する
 - 憲章（`docs/dev-charter/`）を `git subtree pull` で更新した後、AI に差分を確認させて `AI_CONTEXT.md` を更新する
 
 **AI 並用時のルール:**
 - Claude Code 作業中は Copilot 提案を**参考程度**に（盲目的に受け入れない）
 - Copilot の提案がプロジェクト規約に反する場合は無視し、Claude Code でレビュー後に採用判断する
-- Gemini CLI は自動読み込み不可。使用時に手動でコンテキストを渡すこと
+- Gemini CLI は `GEMINI.md` 経由で `@AI_CONTEXT.md` の自動読み込みをサポート
 
 ---
 
-## 禁止事項
+## Prohibited Actions
 
-### セキュリティ制約
+### Security Constraints
 
 - シークレット・API キー・パスワード・トークンを**絶対にコードに書かない**（環境変数または Secret Manager を使う）
 - `.env` ファイルをコミットしない（ダミー値のみの `.env.example` をコミットする）
@@ -227,7 +226,7 @@ pre-commit run --all-files  # 動作確認（必須）
 - **シークレットを含むファイルやコードを AI に渡さない**（プロンプト・コンテキスト・スクリーンショット含む）
 - **AI が生成したコードは必ずレビューしてからコミットする**
 
-### スコープ外変更の禁止
+### Prohibited Out-of-Scope Changes
 
 - **API 仕様変更禁止**: API レスポンス変更・エンドポイント削除（破壊的変更で他サービスに影響）
 - **設計変更禁止**: ディレクトリ構造変更・モジュール移動（アーキテクチャの一貫性を保つため）
