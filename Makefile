@@ -1,10 +1,13 @@
-.PHONY: install lint type test all setup-charter update-charter
+.PHONY: install lint format type test all setup-charter update-charter
 
 install:
 	uv sync
 
 lint:
 	uv run ruff check .
+
+format:
+	uv run ruff format .
 
 type:
 	uv run mypy src

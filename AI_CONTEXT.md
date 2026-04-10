@@ -19,7 +19,7 @@ uv + Claude Code + GitHub Copilot 前提の OSS テンプレート。
 | Python | ^3.11 |
 | uv | 最新安定版 |
 | pytest | ^8 |
-| ruff | ^0.3（linter / formatter, line-length=88） |
+| ruff | ^0.3（linter / formatter, line-length=88, select: E/F/I/UP） |
 | mypy | ^1.8（strict モード） |
 
 **主要ディレクトリ:**
@@ -109,6 +109,16 @@ API → Service → Repository
 - 大きな変更前に方針を説明してから着手する
 - 不要な依存追加禁止: 既存の依存で解決できないか先に検討する
 
+### Charter Lookup
+
+憲章参照: `docs/dev-charter/CHARTER_INDEX.md` でトピックを特定してから該当ファイルのみ読む
+
+不明点が憲章に関係する場合は全ファイルを検索せず、以下の手順で参照する:
+
+1. `docs/dev-charter/CHARTER_INDEX.md` を読み、該当トピックのファイルを特定する
+2. 特定したファイル（原則 1〜2 件）のみを読む
+3. 参照後にユーザーへ提案・確認を行う
+
 ### Error & Debug Handling
 
 - エラー発生時は **原因分析 → 修正方針説明 → 実装** の順で進める
@@ -150,13 +160,14 @@ API → Service → Repository
 ```sh
 make install        # uv sync
 make lint           # ruff check .
+make format         # ruff format .
 make type           # mypy src
 make test           # pytest
 make all            # lint + type + test
 make update-charter # git subtree pull で dev-charter を最新化
 ```
 
-CI（GitHub Actions）は push / PR のたびに `ruff check` → `mypy src` → `pytest` を実行。
+CI（GitHub Actions）は push / PR のたびに `security` → `lint`（ruff check / format / mypy）→ `test`（pytest）→ `build` の順で実行。
 
 ### Pre-commit Hooks (.pre-commit-config.yaml)
 

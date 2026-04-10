@@ -23,24 +23,38 @@ GitHub リポジトリ設定の確認ガイド。テンプレートからプロ�
 
 ### Content Checklist
 
-`main-protection` Ruleset の内容を確認する：
+設定値・ルール一覧は [CI_POLICY.md](CI_POLICY.md) の「Branch Protection Ruleset」セクションを参照。
 
+確認ポイント：
+
+- `Enforcement` が `Active` になっているか（`Evaluate` / `Disabled` は機能しない）
+- Status check のソースが `GitHub Actions` に設定されているか（`Any source` にしない）
+
+## Actions: Workflow permissions
+
+**確認場所:** GitHub リポジトリ → Settings → Actions → General → Workflow permissions
+
+### Workflow permissions（デフォルト権限）
+
+**設定値:** `Read repository contents and packages permissions`（デフォルト）のまま使う。
+
+リポジトリレベルの権限は Read only のままにしておき、書き込みが必要なワークフローでは workflow ファイル内で `permissions` を個別に指定する。
+
+```yaml
+# 例: update-version.yml でコミット・プッシュする場合
+permissions:
+  contents: write
 ```
-Name: main-protection
-Target: main
-Enforcement: Active  ← Active になっているか確認（Evaluate / Disabled は機能しない）
 
-Rules:
-☑ Require a pull request before merging
-  └ Required approvals: 0（個人開発）/ 1 以上（複数人）
-☑ Require status checks to pass before merging
-  └ Status checks: build  ← build が追加されているか確認
-☑ Require conversation resolution before merging
-☑ Block force pushes
-☑ Restrict deletions
-```
+個別指定はリポジトリのデフォルト設定より優先されるため、グローバルを変更する必要はない。
 
-Ruleset の仕様は [topics/CI_POLICY.md](CI_POLICY.md) を参照。
+### Allow GitHub Actions to create and approve pull requests
+
+**設定値:** dev-charter を導入するリポジトリでは **ON にする**。
+
+`check-charter.yml` は `gh pr create` でプルリクエストを作成するため、このチェックボックスが OFF のままだとワークフローが失敗する。
+
+> このチェックボックスはリポジトリ作成時にデフォルトで OFF。`check-charter.yml` を導入する際は必ず ON になっているか確認すること。
 
 ## Sponsors (FUNDING.yml)
 

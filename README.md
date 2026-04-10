@@ -3,8 +3,9 @@
 > **This is the reference (English) version.**
 > The canonical (Japanese) version is [README-jp.md](README-jp.md).
 
-[![CI](https://github.com/y-marui/python-package-template/actions/workflows/ci.yml/badge.svg)](https://github.com/y-marui/python-package-template/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![CI](https://github.com/y-marui/python-package-template/actions/workflows/ci.yml/badge.svg)](https://github.com/y-marui/python-package-template/actions/workflows/ci.yml)
+[![Charter Check](https://github.com/y-marui/python-package-template/actions/workflows/dev-charter-check.yml/badge.svg)](https://github.com/y-marui/python-package-template/actions/workflows/dev-charter-check.yml)
 
 | Field | Value |
 |---|---|
