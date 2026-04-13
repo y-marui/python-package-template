@@ -1,7 +1,7 @@
 name: Dev Charter
 on:
   schedule:
-    - cron: "23 3 * * 1"  # Every Monday at 03:23 UTC
+    - cron: "17 10 * * 3"  # Every Wed 10:17 UTC
   workflow_dispatch:
 
 jobs:
