@@ -44,7 +44,6 @@ uv + Claude Code + GitHub Copilot 前提の OSS テンプレート。
 src/project_name/   # パッケージ本体
 tests/unit/         # 単体テスト
 tests/integration/  # 統合テスト
-ai/context/         # AI向け制約要約（毎回読み込む）
 docs/               # 人間が書き・読む仕様書（AI は参照のみ）
 docs/dev-charter/   # 開発憲章（git subtree で取り込み）
 examples/           # 実装パターンサンプル
@@ -53,9 +52,17 @@ examples/           # 実装パターンサンプル
 **モジュール構成と依存方向:**
 
 ```
-API → Service → Repository
+API → Service → Repository → Storage
 ```
 逆依存禁止。循環依存禁止。
+
+**モジュール一覧:**
+
+| モジュール | 役割 |
+|---|---|
+| `core` | ビジネスロジック |
+| `api` | HTTP インターフェース |
+| `repository` | データアクセス |
 
 **AI コンテキスト優先順位:**
 1. タスクコンテキスト（Issue / Pull Request）
@@ -134,6 +141,34 @@ API → Service → Repository
 - エラーログ・スタックトレースは必ず**全文確認**してから対応（推測で修正しない）
 - デバッグ用の `print` 文は本番コードに残さない
 
+### Task Workflows
+
+**バグ修正:**
+1. 再現確認
+2. 原因特定
+3. 最小修正
+4. テスト追加
+
+**機能実装:**
+1. `docs/specification.md` で仕様確認
+2. `docs/architecture.md` でアーキテクチャ確認
+3. 最小変更で実装
+4. テスト追加
+
+**テスト作成:**
+1. テスト対象の仕様を `docs/specification.md` で確認
+2. 正常系・異常系・境界値を洗い出す
+3. fixture は `tests/conftest.py` に定義
+4. モックは Protocol ベースで注入する
+5. テスト名は `test_<対象>_<条件>_<期待結果>` の形式
+
+### Review Checklist
+
+- 仕様準拠
+- テスト存在
+- 可読性
+- 依存関係問題なし
+
 ---
 
 ## Project-Specific Rules
@@ -157,12 +192,11 @@ API → Service → Repository
 
 日英両方のドキュメントが存在する場合は**日本語版を正本**として編集し、英語版をそれに合わせて更新する（英語版を独立して編集しない）。
 
-### docs/ and ai/context/ Roles
+### docs/ Role
 
 | ディレクトリ | 役割 | AI の編集 |
 |---|---|---|
 | `docs/` | 人間が書き・読む詳細仕様書 | **禁止**（参照のみ） |
-| `ai/context/` | AI向け制約要約。`docs/` と競合する場合は **こちらを優先** | 更新可 |
 
 ### CI / Local Development Commands
 

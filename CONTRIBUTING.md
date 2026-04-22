@@ -82,7 +82,7 @@ pre-commit run --all-files  # verify
 
 - Every commit reaching `main` must be reviewed by another developer
 - Changes involving auth, encryption, or data access require a security review
-- See [ai/review/review_checklist.md](ai/review/review_checklist.md) for the review checklist
+- See [AI_CONTEXT.md](AI_CONTEXT.md#review-checklist) for the review checklist
 
 ## Naming Conventions
 
