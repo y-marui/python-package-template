@@ -5,6 +5,17 @@
 
 ---
 
+## 参照順序（AI 向け）
+
+1. `AI_CONTEXT.md`（このファイル）— AIエントリーポイント。AI固有の指示・開発ルール・guardrails・design decisions
+2. `README.md` — セットアップ・使い方・コマンド・docs/への索引（必要に応じて参照）
+3. `docs/` — 人間・AI共用ナレッジベース（詳細が必要な場合のみ参照）
+   - `docs/specification.md` — 仕様詳細
+   - `docs/architecture.md` — アーキテクチャ設計
+4. `ai/context/` — AI向け制約要約（全ファイル）
+
+---
+
 ## Project Overview
 
 **目的:** AI支援開発用の Python パッケージ/アプリケーションテンプレート。
@@ -46,13 +57,6 @@ API → Service → Repository
 2. プロジェクトコンテキスト（`AI_CONTEXT.md`・プロジェクトドキュメント）
 3. 開発憲章（`docs/dev-charter/`）
 4. グローバルコンテキスト
-
-**ファイル読み込み順序:**
-1. `AI_CONTEXT.md`（このファイル）
-2. `ai/context/`（全ファイル）
-3. `docs/specification.md`（詳細が必要な場合のみ）
-4. `docs/architecture.md`（詳細が必要な場合のみ）
-5. `docs/guardrails.md`
 
 ---
 
@@ -98,6 +102,8 @@ API → Service → Repository
 
 ### Git Workflow
 
+- **ブランチモデル:** `main` / `develop` / `feature/*`
+- **フロー:** Issue → feature ブランチ作成 → AI 実装 → PR → レビュー
 - **Conventional Commits** 形式（`feat` / `fix` / `refactor` / `docs` / `chore`）
 - **WIP 禁止**: 動作しないコードはコミットしない
 - コミット粒度: 機能単位・動作確認 OK 後

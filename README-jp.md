@@ -74,8 +74,7 @@ make all
 ├── docs/
 │   ├── dev-charter/       # 開発憲章（git subtree）
 │   ├── architecture.md    # アーキテクチャ設計
-│   ├── specification.md   # 仕様書
-│   └── guardrails.md      # 開発制約
+│   └── specification.md   # 仕様書
 ├── examples/              # 実装パターンサンプル
 ├── AI_CONTEXT.md          # AI ツール向けコンテキスト
 ├── pyproject.toml         # プロジェクト設定
@@ -88,7 +87,6 @@ make all
 |---|---|
 | [docs/architecture.md](docs/architecture.md) | アーキテクチャ設計 |
 | [docs/specification.md](docs/specification.md) | 仕様書 |
-| [docs/guardrails.md](docs/guardrails.md) | 開発制約・ガードレール |
 | [AI_CONTEXT.md](AI_CONTEXT.md) | AI ツール向けコンテキスト |
 
 ## AI-Assisted Development

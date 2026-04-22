@@ -74,8 +74,7 @@ make all
 ├── docs/
 │   ├── dev-charter/       # Development charter (git subtree)
 │   ├── architecture.md    # Architecture design
-│   ├── specification.md   # Specification
-│   └── guardrails.md      # Development guardrails
+│   └── specification.md   # Specification
 ├── examples/              # Implementation pattern samples
 ├── AI_CONTEXT.md          # AI tool context
 ├── pyproject.toml         # Project configuration
@@ -88,7 +87,6 @@ make all
 |---|---|
 | [docs/architecture.md](docs/architecture.md) | Architecture design |
 | [docs/specification.md](docs/specification.md) | Specification |
-| [docs/guardrails.md](docs/guardrails.md) | Development guardrails |
 | [AI_CONTEXT.md](AI_CONTEXT.md) | AI tool context |
 
 ## AI-Assisted Development
