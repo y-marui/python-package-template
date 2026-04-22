@@ -74,10 +74,12 @@ make all
 ├── docs/
 │   ├── dev-charter/       # Development charter (git subtree)
 │   ├── architecture.md    # Architecture design
+│   ├── file-map.md        # File-level dependency map
 │   ├── specification.md   # Specification
-│   └── guardrails.md      # Development guardrails
+│   └── ui-design.md       # UI design (N/A for this template)
 ├── examples/              # Implementation pattern samples
 ├── AI_CONTEXT.md          # AI tool context
+├── CONTRIBUTING.md        # Development workflow and guidelines
 ├── pyproject.toml         # Project configuration
 └── Makefile               # Development commands
 ```
@@ -87,9 +89,11 @@ make all
 | Document | Description |
 |---|---|
 | [docs/architecture.md](docs/architecture.md) | Architecture design |
+| [docs/file-map.md](docs/file-map.md) | File-level dependency map |
 | [docs/specification.md](docs/specification.md) | Specification |
-| [docs/guardrails.md](docs/guardrails.md) | Development guardrails |
+| [docs/ui-design.md](docs/ui-design.md) | UI design |
 | [AI_CONTEXT.md](AI_CONTEXT.md) | AI tool context |
+| [CONTRIBUTING.md](CONTRIBUTING.md) | Development workflow and guidelines |
 
 ## AI-Assisted Development
 
