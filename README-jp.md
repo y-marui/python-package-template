@@ -74,9 +74,12 @@ make all
 ├── docs/
 │   ├── dev-charter/       # 開発憲章（git subtree）
 │   ├── architecture.md    # アーキテクチャ設計
-│   └── specification.md   # 仕様書
+│   ├── file-map.md        # ファイルレベル依存マップ
+│   ├── specification.md   # 仕様書
+│   └── ui-design.md       # UI設計（このテンプレートは該当なし）
 ├── examples/              # 実装パターンサンプル
 ├── AI_CONTEXT.md          # AI ツール向けコンテキスト
+├── CONTRIBUTING.md        # 開発フロー・ガイドライン
 ├── pyproject.toml         # プロジェクト設定
 └── Makefile               # 開発コマンド
 ```
@@ -86,8 +89,11 @@ make all
 | ドキュメント | 内容 |
 |---|---|
 | [docs/architecture.md](docs/architecture.md) | アーキテクチャ設計 |
+| [docs/file-map.md](docs/file-map.md) | ファイルレベル依存マップ |
 | [docs/specification.md](docs/specification.md) | 仕様書 |
+| [docs/ui-design.md](docs/ui-design.md) | UI設計 |
 | [AI_CONTEXT.md](AI_CONTEXT.md) | AI ツール向けコンテキスト |
+| [CONTRIBUTING.md](CONTRIBUTING.md) | 開発フロー・ガイドライン |
 
 ## AI-Assisted Development
 

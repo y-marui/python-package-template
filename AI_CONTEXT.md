@@ -8,11 +8,10 @@
 ## 参照順序（AI 向け）
 
 1. `AI_CONTEXT.md`（このファイル）— AIエントリーポイント。AI固有の指示・開発ルール・guardrails・design decisions
-2. `README.md` — セットアップ・使い方・コマンド・docs/への索引（必要に応じて参照）
-3. `docs/` — 人間・AI共用ナレッジベース（詳細が必要な場合のみ参照）
-   - `docs/specification.md` — 仕様詳細
-   - `docs/architecture.md` — アーキテクチャ設計
-4. `ai/context/` — AI向け制約要約（全ファイル）
+2. `README.md`（概要・セットアップ）
+3. `docs/architecture.md`（モジュール・コンポーネント構造）
+4. `docs/file-map.md`（ファイルレベルの依存関係）
+5. `docs/specification.md`（機能仕様・データフロー）
 
 ---
 
@@ -102,11 +101,9 @@ API → Service → Repository
 
 ### Git Workflow
 
-- **ブランチモデル:** `main` / `develop` / `feature/*`
-- **フロー:** Issue → feature ブランチ作成 → AI 実装 → PR → レビュー
 - **Conventional Commits** 形式（`feat` / `fix` / `refactor` / `docs` / `chore`）
 - **WIP 禁止**: 動作しないコードはコミットしない
-- コミット粒度: 機能単位・動作確認 OK 後
+- ブランチ戦略・PR フローなど開発者向け詳細は [CONTRIBUTING.md](CONTRIBUTING.md) を参照
 
 ### Work Stance
 
@@ -177,7 +174,7 @@ CI（GitHub Actions）は push / PR のたびに `security` → `lint`（ruff ch
 
 ### Pre-commit Hooks (.pre-commit-config.yaml)
 
-セキュリティ・品質チェックが自動で走る。以下が有効:
+セキュリティ・品質チェックが自動で走る。セットアップ手順は [CONTRIBUTING.md](CONTRIBUTING.md) を参照。以下が有効:
 
 | フック | 内容 |
 |---|---|
@@ -189,22 +186,6 @@ CI（GitHub Actions）は push / PR のたびに `security` → `lint`（ruff ch
 | trailing-whitespace / end-of-file-fixer | 空白・改行の正規化 |
 | check-yaml / check-json / check-merge-conflict | 構文・競合チェック |
 | shellcheck | シェルスクリプト静的解析 |
-
-**セキュリティの二層構造:**
-- **層1**: 個人のグローバル git フック（`~/.config/git/hooks/pre-commit`）— 開発者個人の全リポジトリに適用される安全網
-- **層2**: per-repo の `.pre-commit-config.yaml` — チームとしての強制手段。CI でも必ず動作させる
-
-セットアップ:
-
-```sh
-cp docs/dev-charter/.pre-commit-config.yaml .
-cp docs/dev-charter/.gitleaks.toml .
-# core.hooksPath が設定済みの場合は pre-commit install 不要
-git config core.hooksPath 2>/dev/null \
-  && echo "core.hooksPath 設定済み。次のコマンドで確認:" \
-  || pre-commit install
-pre-commit run --all-files  # 動作確認（必須）
-```
 
 **コードレビュー要件:**
 - `main` に到達するコミットは必ず他の開発者がレビューする
