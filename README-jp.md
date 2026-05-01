@@ -40,10 +40,16 @@ cd my-project
 mv src/project_name src/your_package_name
 # pyproject.toml の name フィールドも更新すること
 
-# 3. 依存関係をインストール
+# 3. プロジェクト用 README をセットアップ（テンプレートの README ファイルと差し替え）
+mv README_TEMPLATE-jp.md README-jp.md
+mv README_TEMPLATE.md README.md
+# プレースホルダを置換：{user}・{repo}・{workflow}・[USERNAME]・[BMC_USERNAME]
+# ※ 上記でテンプレートの README ファイルをプロジェクト用に差し替えます
+
+# 4. 依存関係をインストール
 make install
 
-# 4. 動作確認
+# 5. 動作確認
 make all
 ```
 
@@ -78,6 +84,8 @@ make all
 │   ├── specification.md   # 仕様書
 │   └── ui-design.md       # UI設計（このテンプレートは該当なし）
 ├── examples/              # 実装パターンサンプル
+├── README_TEMPLATE.md     # プロジェクト用 README 雛形（README.md にリネームして使う）
+├── README_TEMPLATE-jp.md  # プロジェクト用 README 雛形（日本語版）
 ├── AI_CONTEXT.md          # AI ツール向けコンテキスト
 ├── CONTRIBUTING.md        # 開発フロー・ガイドライン
 ├── pyproject.toml         # プロジェクト設定
@@ -92,6 +100,7 @@ make all
 | [docs/file-map.md](docs/file-map.md) | ファイルレベル依存マップ |
 | [docs/specification.md](docs/specification.md) | 仕様書 |
 | [docs/ui-design.md](docs/ui-design.md) | UI設計 |
+| [README_TEMPLATE.md](README_TEMPLATE.md) | プロジェクト用 README 雛形 |
 | [AI_CONTEXT.md](AI_CONTEXT.md) | AI ツール向けコンテキスト |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | 開発フロー・ガイドライン |
 
@@ -111,8 +120,9 @@ make all
 2. `pyproject.toml` の `name` フィールドを更新
 3. `AI_CONTEXT.md` のプロジェクト概要を更新
 4. `LICENSE` の `[YEAR]` と `[AUTHOR]` を置換
-5. バッジ URL の `[user]` と `[repo]` を置換
-6. `make all` で動作確認
+5. `README_TEMPLATE-jp.md` → `README-jp.md`、`README_TEMPLATE.md` → `README.md` にリネーム
+6. README のプレースホルダを置換：`{user}`・`{repo}`・`{workflow}`・`[USERNAME]`・`[BMC_USERNAME]`
+7. `make all` で動作確認
 
 ## License
 

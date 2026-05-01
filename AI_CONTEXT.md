@@ -125,6 +125,19 @@ API → Service → Repository → Storage
 - 大きな変更前に方針を説明してから着手する
 - 不要な依存追加禁止: 既存の依存で解決できないか先に検討する
 
+### Document Sync Rule
+
+仕様・ルール・構成に変更が生じたとき、変更と同じ作業内で関連ドキュメントを更新する。
+対象は `docs/` 内のファイルに限らず、`AI_CONTEXT.md`・`README.md` 等のルートファイルも含む。
+
+### dev-charter Modification Rules
+
+`docs/dev-charter/` 配下のファイルを**直接編集しない**。
+
+- 変更が必要な場合は dev-charter リポジトリ本体に Issue を立て、`git subtree pull` でアップデートを取り込む
+- `git subtree pull` によるアップデートのみ許可する
+- このプロジェクト固有のルールは、`AI_CONTEXT.md` または専用ファイルに記載する
+
 ### Charter Lookup
 
 憲章参照: `docs/dev-charter/CHARTER_INDEX.md` でトピックを特定してから該当ファイルのみ読む

@@ -40,10 +40,16 @@ cd my-project
 mv src/project_name src/your_package_name
 # Also update the name field in pyproject.toml
 
-# 3. Install dependencies
+# 3. Set up project README (replaces this template's README files)
+mv README_TEMPLATE-jp.md README-jp.md
+mv README_TEMPLATE.md README.md
+# Then replace placeholders: {user}, {repo}, {workflow}, [USERNAME], [BMC_USERNAME]
+# Note: the above replaces the template's README files with your project's README
+
+# 4. Install dependencies
 make install
 
-# 4. Verify
+# 5. Verify
 make all
 ```
 
@@ -78,6 +84,8 @@ make all
 │   ├── specification.md   # Specification
 │   └── ui-design.md       # UI design (N/A for this template)
 ├── examples/              # Implementation pattern samples
+├── README_TEMPLATE.md     # Project README template (rename to README.md)
+├── README_TEMPLATE-jp.md  # Project README template in Japanese
 ├── AI_CONTEXT.md          # AI tool context
 ├── CONTRIBUTING.md        # Development workflow and guidelines
 ├── pyproject.toml         # Project configuration
@@ -92,6 +100,7 @@ make all
 | [docs/file-map.md](docs/file-map.md) | File-level dependency map |
 | [docs/specification.md](docs/specification.md) | Specification |
 | [docs/ui-design.md](docs/ui-design.md) | UI design |
+| [README_TEMPLATE.md](README_TEMPLATE.md) | Project README template |
 | [AI_CONTEXT.md](AI_CONTEXT.md) | AI tool context |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Development workflow and guidelines |
 
@@ -111,8 +120,9 @@ AI context is pre-configured in `AI_CONTEXT.md`.
 2. Update the `name` field in `pyproject.toml`
 3. Update the project overview in `AI_CONTEXT.md`
 4. Replace `[YEAR]` and `[AUTHOR]` in `LICENSE`
-5. Replace `[user]` and `[repo]` in badge URLs
-6. Run `make all` to verify
+5. Rename `README_TEMPLATE.md` → `README.md` (and `README_TEMPLATE-jp.md` → `README-jp.md`)
+6. Replace placeholders in README: `{user}`, `{repo}`, `{workflow}`, `[USERNAME]`, `[BMC_USERNAME]`
+7. Run `make all` to verify
 
 ## License
 
