@@ -205,6 +205,15 @@ API → Service → Repository → Storage
 
 日英両方のドキュメントが存在する場合は**日本語版を正本**として編集し、英語版をそれに合わせて更新する（英語版を独立して編集しない）。
 
+### Initial Template Setup
+
+テンプレートから新規プロジェクトを作成した直後は、以下を優先して実施する。
+
+1. `docs/dev-charter/topics/GITHUB_SETTINGS.md` に従い GitHub リポジトリ設定を適用する
+2. `README_TEMPLATE-jp.md` → `README-jp.md`、`README_TEMPLATE.md` → `README.md` にリネームしてテンプレート README を置き換える
+3. `LICENSE` の `[YEAR]` / `[AUTHOR]`、README / FUNDING の `{user}` / `{repo}` / `{workflow}` / `[USERNAME]` / `[BMC_USERNAME]` を実値に置き換える
+4. `.github/workflows/dev-charter-check.yml` が存在する場合は `on.schedule.cron` をランダムな曜日・時・分に変更する
+
 ### docs/ Role
 
 | ディレクトリ | 役割 | AI の編集 |
@@ -248,19 +257,9 @@ CI（GitHub Actions）は push / PR のたびに `security` → `lint`（ruff ch
 
 ## AI Tool Assignments
 
-| ツール | 担当範囲 |
-|---|---|
-| **Claude Code** | プロジェクト立ち上げ、大規模なコード変更、アーキテクチャ設計・リファクタリング提案 |
-| **GitHub Copilot** | バグ修正、細かな実装・コーディング補助、単体テスト作成 |
-| **Gemini CLI** | プライバシーポリシー作成・更新、ストア説明文、審査用ドキュメント、プロジェクト全体のドキュメント管理 |
-
-**AI_CONTEXT.md の同期ルール:**
-- 憲章（`docs/dev-charter/`）を `git subtree pull` で更新した後、AI に差分を確認させて `AI_CONTEXT.md` を更新する
-
-**AI 並用時のルール:**
-- Claude Code 作業中は Copilot 提案を**参考程度**に（盲目的に受け入れない）
-- Copilot の提案がプロジェクト規約に反する場合は無視し、Claude Code でレビュー後に採用判断する
-- Gemini CLI は `GEMINI.md` 経由で `@AI_CONTEXT.md` の自動読み込みをサポート
+- **使用ツール**：Claude Code、GitHub Copilot、Gemini CLI
+- **標準担当の正本**：`docs/dev-charter/AI_COLLABORATION_RULES.md` の「AI Tool Responsibilities」と「Rules for Multi-AI Usage」
+- **このリポジトリ固有の上書き**：なし
 
 ---
 
