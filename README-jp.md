@@ -12,6 +12,7 @@
 | 開発対象 | Python パッケージ / アプリケーション |
 | 開発環境 | 個人〜小規模チーム（1〜3人） |
 | 主言語 | 英語 |
+| ライセンス | MIT |
 | AI ツール | Claude Code / GitHub Copilot / Gemini CLI |
 | 動作環境 | Python ^3.11 |
 

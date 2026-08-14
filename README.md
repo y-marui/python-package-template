@@ -12,6 +12,7 @@
 | Target | Python package / application |
 | Team | Solo to small team (1–3 people) |
 | Language | English |
+| License | MIT |
 | AI Tools | Claude Code / GitHub Copilot / Gemini CLI |
 | Runtime | Python ^3.11 |
 

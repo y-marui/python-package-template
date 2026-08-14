@@ -1,1 +1,1 @@
-See @AI_CONTEXT.md for shared project context.
+Refer to `AI_CONTEXT.md`.
