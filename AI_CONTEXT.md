@@ -212,7 +212,6 @@ API → Service → Repository → Storage
 1. `docs/dev-charter/topics/GITHUB_SETTINGS.md` に従い GitHub リポジトリ設定を適用する
 2. `README_TEMPLATE-jp.md` → `README-jp.md`、`README_TEMPLATE.md` → `README.md` にリネームしてテンプレート README を置き換える
 3. `LICENSE` の `[YEAR]` / `[AUTHOR]`、README / FUNDING の `{user}` / `{repo}` / `{workflow}` / `[USERNAME]` / `[BMC_USERNAME]` を実値に置き換える
-4. `.github/workflows/dev-charter-check.yml` が存在する場合は `on.schedule.cron` をランダムな曜日・時・分に変更する
 
 ### docs/ Role
 
