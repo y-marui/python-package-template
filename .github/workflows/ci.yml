@@ -67,6 +67,8 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - uses: astral-sh/setup-uv@v10.0.1
+        with:
+          enable-cache: true
       - run: uv sync --frozen
       - run: uv run ruff check .
       - run: uv run ruff format --check .
@@ -84,6 +86,7 @@ jobs:
       - uses: actions/checkout@v7
       - uses: astral-sh/setup-uv@v10.0.1
         with:
+          enable-cache: true
           python-version: ${{ matrix.python-version }}
       - run: uv sync --frozen
       - run: uv run pytest
@@ -96,8 +99,10 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - uses: astral-sh/setup-uv@v10.0.1
+        with:
+          enable-cache: true
       - run: uv sync --frozen
-      - run: uv run python -c "import project_name"
+      - run: uv build
 
   gate:
     name: CI

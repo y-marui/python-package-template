@@ -4,6 +4,7 @@ version = "0.1.0"
 description = ""
 authors = [{ name = "Team" }]
 requires-python = ">=3.11"
+dependencies = []
 
 [dependency-groups]
 dev = [
