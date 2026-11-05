@@ -13,7 +13,7 @@
 | 開発環境 | 個人〜小規模チーム（1〜3人） |
 | 主言語 | 英語 |
 | ライセンス | MIT |
-| AI ツール | Claude Code / GitHub Copilot / Gemini CLI |
+| AI ツール | Claude Code / GitHub Copilot |
 | 動作環境 | Python ^3.11 |
 
 AI支援開発向けの Python パッケージ/アプリケーションテンプレート。
@@ -113,7 +113,6 @@ make all
 |---|---|
 | Claude Code | 立ち上げ・大規模変更・アーキテクチャ設計 |
 | GitHub Copilot | バグ修正・細かな実装・テスト作成 |
-| Gemini CLI | ドキュメント管理・翻訳補助 |
 
 ## Customization
 

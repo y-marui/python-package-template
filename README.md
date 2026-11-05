@@ -13,7 +13,7 @@
 | Team | Solo to small team (1–3 people) |
 | Language | English |
 | License | MIT |
-| AI Tools | Claude Code / GitHub Copilot / Gemini CLI |
+| AI Tools | Claude Code / GitHub Copilot |
 | Runtime | Python ^3.11 |
 
 A Python package/application template for AI-assisted development.
@@ -113,7 +113,6 @@ AI context is pre-configured in `AI_CONTEXT.md`.
 |---|---|
 | Claude Code | Setup, large-scale changes, architecture design |
 | GitHub Copilot | Bug fixes, small implementations, test writing |
-| Gemini CLI | Documentation management, translation assistance |
 
 ## Customization
 
